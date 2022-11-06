@@ -6,10 +6,11 @@ from sklearn.model_selection import train_test_split
 fr = open("number.txt", "r")    # อ่านค่าประวัติ
 v_lotto = list([])  # keep lotto
 for i in fr.readlines():
-    v_lotto.append(int(i[:-1]))
+    v_lotto.append(int(i[:-1]) / 999999)
 
 v_lotto.reverse()
 
+print(v_lotto)
 ##@@ demo
 # result = []
 # for i in range(len(v_lotto)-1):
@@ -41,7 +42,7 @@ model.fit(number, lotto)
 # predit demo
 from sklearn.metrics import accuracy_score
 y_predit = model.predict([[len(lotto)+1]])
-print(int(y_predit))
+print(int(999999 * y_predit))
 ##@@ demo
 
 # import math

@@ -15,5 +15,5 @@ for i in fr.readlines():
 #         result *= (-1)
 #     print(result)
 print(v_lotto)
-print(488316 in v_lotto)
+print(429159 in v_lotto)
 

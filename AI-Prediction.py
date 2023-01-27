@@ -31,20 +31,23 @@ lotto = lotto.reshape(-1, 1)
 number = number.reshape(-1, 1)
 
 # 476
-x_train, x_test = number[:390], number[390:]  # แยกข้อมูลสำหรับ train & test
-y_train, y_test = lotto[:390], lotto[390:]   # แยกข้อมูลสำหรับ train & test
+# x_train, x_test = number[:390], number[390:]  # แยกข้อมูลสำหรับ train & test
+# y_train, y_test = lotto[:390], lotto[390:]   # แยกข้อมูลสำหรับ train & test
 
 # model train
 model = LinearRegression()
 model.fit(number, lotto)
 
+# plt.scatter(number, lotto)
+# plt.show()
+
 ##@@ demo
 # predit demo
-from sklearn.metrics import accuracy_score
 y_predit = model.predict([[len(lotto)+1]])
 print(int(999999 * y_predit))
 ##@@ demo
 
+# from sklearn.metrics import accuracy_score
 # import math
 # for i in range(len(y_predit)):
 #     y_predit[i][0] = math.ceil(y_predit[i][0])

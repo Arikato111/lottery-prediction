@@ -35,12 +35,14 @@ number = number.reshape(-1, 1)
 # y_train, y_test = lotto[:390], lotto[390:]   # แยกข้อมูลสำหรับ train & test
 
 # model train
+print(number)
 model = LinearRegression()
 model.fit(number, lotto)
 
-# plt.scatter(number, lotto)
-# plt.show()
+plt.plot(number, lotto, '--*')
+plt.show()
 
+exit()
 ##@@ demo
 # predit demo
 y_predit = model.predict([[len(lotto)+1]])
